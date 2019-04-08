@@ -61,7 +61,7 @@
 * What assertions need to be / should be made? -->
 
 #### UML
-![whiteboard 1](./assets/uml.jpg) 
+![whiteboard 1](./assets/uml.jpeg) 
 
 #### Collaborators
 Chris Merrit, Vanessa Wei, Joseph Wolfe, Gregory Dukes, and Alexander White.
