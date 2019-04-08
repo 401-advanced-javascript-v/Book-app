@@ -10,7 +10,7 @@
 ### Links and Resources
 * [PR][1]
 * [travis][2]
-* [front-end][4]
+* [front-end][https://dashboard.heroku.com/apps/warm-river-62437/resources]
 
 #### Documentation
 
