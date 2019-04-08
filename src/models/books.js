@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-require('mongoose-schema-jsonschema')(mongoose);
+const bookshelves = require('./bookshelves.js');
 
 const books = mongoose.Schema({
   title: { type: String, required: true },
@@ -10,6 +10,21 @@ const books = mongoose.Schema({
   image_url: { type: String, required: true },
   description: { type: String, required: true },
   bookshelf_id: { type: String, required: true },
-});
+}, { toObject:{virtuals:true}, toJSON:{virtuals:true}});
 
+books.virtual('bookshelf',{
+  ref: 'bookshelves',
+  localField: 'bookshelf_id',
+  foreignField: '_id',
+  justOne:true,
+})
+
+books.pre('find', function(){
+  try {
+    this.populate('bookshelf');
+  }
+  catch(e){
+    console.error('Find Error', e);
+  }
+})
 module.exports = mongoose.model('books', books);
