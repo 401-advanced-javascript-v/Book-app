@@ -4,11 +4,15 @@ const express = require('express');
 const router = express.Router();
 const books = require('../models/bookshelves.js');
 
+const app = express();
+// app.set('view engine', 'ejs');
+
+
 const mongoose = require('mongoose');
 const mongooseOptions = {
     useNewUrlParser:true,
     useCreateIndex:true,
-    useFindAndNodity: false
+    // useFindAndNodity: false
 }
 
 mongoose.connect(process.env.MONGODB_URI, mongooseOptions);
@@ -34,8 +38,10 @@ function Book(info) {
   }
   
   function getBooks(request, response,next ) {
+    console.log('res', response.body);
     books.find({})
         .then(results => {
+          console.log('results', results)
             if(results.length) {
                 response.render('pages/index', {books: results})
             } else {

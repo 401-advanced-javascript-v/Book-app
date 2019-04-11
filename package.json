@@ -35,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/401-advanced-javascript-v/Book-app/issues"
   },
-  "homepage": "https://github.com/401-advanced-javascript-v/Book-app#readme"
+  "homepage": "https://github.com/401-advanced-javascript-v/Book-app#readme",
+  "devDependencies": {}
 }
